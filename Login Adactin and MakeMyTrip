@@ -1,0 +1,290 @@
+package com.selenium;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class Login {
+
+
+	public static void main (String[] args) throws AWTException, InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\skal\\eclipse-workspace\\MethodOverloading\\driver\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		Actions mouse = new Actions(driver);
+		Robot bot = new Robot();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		
+		
+		driver.get("https://adactinhotelapp.com/");
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		
+		
+		driver.findElement(By.xpath("//*[@type='text']")).sendKeys("Elonmusk01");
+		driver.findElement(By.xpath("//*[@type='password']")).sendKeys("dummymail123");
+		driver.findElement(By.xpath("//*[@name='login']")).click();
+		
+		WebElement dd1 = driver.findElement(By.xpath("//*[@name='location']"));
+		Select slc1 = new Select(dd1);
+		slc1.selectByIndex(7);
+		
+		WebElement dd2 = driver.findElement(By.xpath("//*[@name='hotels']"));
+		Select slc2 = new Select(dd2);
+		slc2.selectByValue("Hotel Sunshine");
+		
+		WebElement dd3 = driver.findElement(By.xpath("//*[@name='room_type']"));
+		Select slc3 = new Select(dd3);
+		slc3.selectByVisibleText("Standard");
+		
+		WebElement dd4 = driver.findElement(By.xpath("//*[@name='room_nos']"));
+		Select slc4 = new Select(dd4);
+		slc4.selectByVisibleText("1 - One");
+		
+		WebElement mouse1 = driver.findElement(By.xpath("//*[@type='text'][@class='date_pick']"));
+		
+		mouse.click(mouse1).build().perform();
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+	
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		
+			Thread.sleep(1000);
+		
+		WebElement dd5 = driver.findElement(By.xpath("//*[@type='text'][@class='date_pick']"));
+		dd5.sendKeys("05/09/2023");
+		
+		bot.keyPress(KeyEvent.VK_TAB);
+		bot.keyRelease(KeyEvent.VK_TAB);
+			Thread.sleep(1000);
+		bot.keyPress(KeyEvent.VK_BACK_SPACE);
+		bot.keyRelease(KeyEvent.VK_BACK_SPACE);
+			Thread.sleep(1000);
+		
+		bot.keyPress(KeyEvent.VK_1);
+		bot.keyRelease(KeyEvent.VK_1);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_1);
+		bot.keyRelease(KeyEvent.VK_1);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_SLASH);
+		bot.keyRelease(KeyEvent.VK_SLASH);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_0);
+		bot.keyRelease(KeyEvent.VK_0);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_9);
+		bot.keyRelease(KeyEvent.VK_9);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_SLASH);
+		bot.keyRelease(KeyEvent.VK_SLASH);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_2);
+		bot.keyRelease(KeyEvent.VK_2);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_0);
+		bot.keyRelease(KeyEvent.VK_0);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_2);
+		bot.keyRelease(KeyEvent.VK_2);
+			Thread.sleep(300);
+		bot.keyPress(KeyEvent.VK_3);
+		bot.keyRelease(KeyEvent.VK_3);
+
+		WebElement dd6 = driver.findElement(By.xpath("//*[@name='adult_room']"));
+		Select scl6 = new Select(dd6);
+		scl6.selectByIndex(2);
+		WebElement dd7 = driver.findElement(By.xpath("//*[@type='submit']"));
+		mouse.click(dd7).build().perform();
+		WebElement dd8 = driver.findElement(By.xpath("//*[@name='radiobutton_0']"));
+		mouse.click(dd8).build().perform();
+		
+		bot.keyPress(KeyEvent.VK_ENTER);
+		bot.keyRelease(KeyEvent.VK_ENTER);
+		js.executeScript("window.scrollBy(0,2000);");
+		driver.findElement(By.xpath("//*[@class='reg_input']")).sendKeys("Elon");
+		driver.findElement(By.xpath("//*[@name='last_name']")).sendKeys("musk");
+		driver.findElement(By.xpath("//*[@name='address']")).sendKeys("Elon Musk.Boca Chica,Texas.");
+		driver.findElement(By.xpath("//*[@class='reg_input'][@name='cc_num']")).sendKeys("1234567891234567");
+		
+		
+		WebElement dd9 = driver.findElement(By.xpath("//*[@name='cc_type'][@class='select_combobox']"));
+		Select scl7 = new Select(dd9);
+		scl7.selectByVisibleText("American Express");
+		
+		WebElement dd10 = driver.findElement(By.xpath("//*[@name='cc_exp_month']"));
+		Select scl8 = new Select(dd10);
+		scl8.selectByIndex(9);
+		
+		WebElement dd11 = driver.findElement(By.xpath("//*[@name='cc_exp_year']"));
+		Select scl9 = new Select(dd11);
+		scl9.selectByIndex(12);
+
+		driver.findElement(By.xpath("//*[@name='cc_cvv']")).sendKeys("619");
+		
+		bot.keyPress(KeyEvent.VK_TAB);
+		bot.keyRelease(KeyEvent.VK_TAB);
+		bot.keyPress(KeyEvent.VK_ENTER);
+		bot.keyRelease(KeyEvent.VK_ENTER);
+
+		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+		WebElement log = driver.findElement(By.xpath("//*[@type='button'][3]"));
+			Thread.sleep(500);
+		js1.executeScript("arguments[0].scrollIntoView();",log);
+		
+		WebElement logout = driver.findElement(By.xpath("//*[@type='button'][3]"));
+			Thread.sleep(2000);
+		mouse.click(logout).build().perform();
+
+			Thread.sleep(2000);
+		driver.navigate().to("https://www.makemytrip.com/");
+		driver.findElement(By.xpath("//span[@class='ic_circularclose_grey']")).click();
+		
+		
+		//MAKEMYTIP LOGIN
+//		WebElement login = driver.findElement(By.xpath("//*[@class='makeFlex hrtlCenter font10 makeRelative lhUser userLoggedOut']"));
+//		login.click();
+//		
+//		driver.findElement(By.xpath("//*[@type='text'][@name='username']")).sendKeys("dummymailnumbertwo@gmail.com");
+//		WebElement button1 = driver.findElement(By.xpath("//button[@class='capText font16']"));
+//		mouse.click(button1).build().perform();
+//		
+//		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("dummymail@1");
+//		WebElement button2 = driver.findElement(By.xpath("//button[@data-cy='login']"));
+//		mouse.click(button2).build().perform();
+		//MAKEMYTIP LOGIN
+		
+		
+		//FROM
+		driver.findElement(By.xpath("//*[@data-cy='fromCity']")).click();
+		driver.findElement(By.xpath("//*[@type='text'][@placeholder='From']")).sendKeys("chennai");
+		Thread.sleep(1000);
+		
+		bot.keyPress(KeyEvent.VK_DOWN);
+		bot.keyRelease(KeyEvent.VK_DOWN);
+		bot.keyPress(KeyEvent.VK_ENTER);
+		bot.keyRelease(KeyEvent.VK_ENTER);
+		//FROM
+		
+		
+		//TO
+		driver.findElement(By.xpath("//*[@data-cy='toCity']")).click();
+		driver.findElement(By.xpath("//*[@type='text'][@placeholder='To']")).sendKeys("portland");
+		Thread.sleep(1000);
+		
+		bot.keyPress(KeyEvent.VK_DOWN);
+		bot.keyRelease(KeyEvent.VK_DOWN);
+		bot.keyPress(KeyEvent.VK_ENTER);
+		bot.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(500);
+		//TO
+		
+		
+		//DEPARTURE
+		WebElement click = driver.findElement(By.xpath("//p[text()='20']"));
+		mouse.click(click).build().perform();
+		WebElement click1 = driver.findElement(By.xpath("//*[.='Return']"));
+		mouse.click(click1).build().perform();
+		
+		
+		//RETURN
+		WebElement click2 = driver.findElement(By.xpath("//p[.='30']"));
+		mouse.click(click2).build().perform();
+		//RETURN
+		
+		
+		//CHOOSING TRAVELLERS & CLASS
+		WebElement click3 = driver.findElement(By.xpath("//*[@for='travellers']"));
+		mouse.click(click3).build().perform();
+			Thread.sleep(500);
+		WebElement click4 = driver.findElement(By.xpath("//*[.='Premium Economy']"));
+		mouse.click(click4).build().perform();
+			Thread.sleep(500);
+		WebElement click5 = driver.findElement(By.xpath("//*[.='Business']"));
+		mouse.click(click5).build().perform();
+			Thread.sleep(500);
+//		WebElement click6 = driver.findElement(By.xpath("//*[.='First Class']"));
+//		mouse.click(click6).build().perform();
+		////CHOOSING TRAVELLERS & CLASS
+			
+			
+		//PRESSING APPLY BUTTON	
+		WebElement click7 = driver.findElement(By.xpath("//*[@type='button'][.='APPLY']"));
+		mouse.click(click7).build().perform();
+		//PRESSING APPLY BUTTON
+		
+		
+		//PRESSING SEARCH BUTTON
+		WebElement click8 = driver.findElement(By.xpath("//a[.='Search']"));
+		mouse.click(click8).build().perform();
+	
+		Thread.sleep(5000);
+		//PRESSING SEARCH BUTTON
+		
+		
+		//HOVERING FARE TYPE
+		WebElement click9 = driver.findElement(By.xpath("//*[.='Armed Forces']"));
+		mouse.moveToElement(click9).build().perform();
+			Thread.sleep(1000);
+		WebElement click10 = driver.findElement(By.xpath("//*[.='Student']"));
+		mouse.moveToElement(click10).build().perform();
+			Thread.sleep(1000);
+		WebElement click11 = driver.findElement(By.xpath("//*[.='Senior Citizen']"));
+		mouse.moveToElement(click11).build().perform();
+			Thread.sleep(1000);
+		WebElement click12 = driver.findElement(By.xpath("//*[.='Doctors & Nurses']"));
+		mouse.moveToElement(click12).build().perform();
+			Thread.sleep(1000);
+		WebElement click13 = driver.findElement(By.xpath("//*[.='Double Seat']"));
+		mouse.moveToElement(click13).build().perform();
+		//HOVERING FARE TYPE
+		
+		
+		//SELECTING STUDENT AND SEARCHING FOR FLIGHT
+		WebElement click14 = driver.findElement(By.xpath("//*[.='Student']"));
+		mouse.click(click14).build().perform();
+		WebElement click15 = driver.findElement(By.xpath("//*[.='SEARCH']"));
+		mouse.click(click15).build().perform();
+		//SELECTING STUDENT AND SEARCHING FOR FLIGHT
+		Thread.sleep(7000);
+		
+		driver.close();
+		
+	}
+}
